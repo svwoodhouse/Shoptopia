@@ -1,17 +1,10 @@
 .product-detail-page-container {
-    display: block;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-
-.product-detail-container {
     display: flex;
 }
 
 .product-detail-image-container {
     height: 40%;
-    width: 30%
+    width: 30%;
 }
 
 .product-detail-image {
@@ -28,6 +21,16 @@
 
 .rating-container {
     border-bottom: 1px solid black;
-    margin-bottom: 20px;
+    padding: 10px;
 }
 
+.product-detail-image-container h2 {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.product-detail-image-container p {
+    margin: 0;
+    text-align: center;
+    text-
+}

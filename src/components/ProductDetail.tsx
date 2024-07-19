@@ -21,15 +21,15 @@ const ProductDetail = () => {
 
     return (
         <div className="product-detail-page-container">
-            <div className="product-detail-container">
-                <div className="product-detail-image-container">
-                    {product.images ? <img className="product-detail-image" src={product.images[0]} alt={product.title}></img> : <div>Loading image..</div>}
-                    <div>
-                        <div>{product.title}</div>
-                        <div>By: {product.brand}</div>
-                        <div>${product.price}</div>
-                    </div>
+            <div className="product-detail-image-container">
+                {product.images ? <img className="product-detail-image" src={product.images[0]} alt={product.title}></img> : <div>Loading image..</div>}
+                <div>
+                        <h2>{product.title}</h2>
+                        <p>By: {product.brand}</p>
+                        <p>${product.price}</p>
                 </div>
+            </div>
+            <div className="product-detail-container">
                 <div className="product-details">
                     <p>{product.description}</p>
                     <p>{product.category}</p>
@@ -37,9 +37,7 @@ const ProductDetail = () => {
                     <p>{product.shippingInformation}</p>
                     <p>{product.returnPolicy}</p>
                 </div>
-            </div>
-            <div className="reviews-container">
-            <h2>Reviews</h2>
+                <div className="reviews-container">
                 {
                     reviews.map((review, index)=>{
                         return(
@@ -53,6 +51,7 @@ const ProductDetail = () => {
                         )
                     })
                 }
+            </div>
             </div>
         </div>
     )
