@@ -1,0 +1,29 @@
+.product-detail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.product-detail-image-container {
+    height: 40%;
+    width: 30%
+}
+
+.product-detail-image {
+    height: 40%;
+    width: 100%;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+.rating-container {
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+

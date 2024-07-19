@@ -1,0 +1,9 @@
+.checkout-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkout-items-container {
+    display: flex;
+    flex-direction: column;
+}

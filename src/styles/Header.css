@@ -1,0 +1,50 @@
+.header-container {
+    background-color: rgb(86, 110, 147);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  .header-right-section {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-right-section:hover {
+    cursor: pointer;
+  }
+
+  .company-logo {
+    width: 40%;
+    height: 100%;
+  }
+
+  .search-bar-form {
+    display: flex;
+    align-content: center;
+  }
+  
+  .search-button {
+    height: 100%;
+    width: 35px;
+    border: 1px solid rgb(118, 118, 118);
+    border-left: none;
+  }
+  
+  .header-left-section {
+    width: 100px;
+  }
+
+  .header-left-section:hover {
+    cursor: pointer;
+  }
+  
+  .cart-image {
+    width: 40px;
+  }
