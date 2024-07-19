@@ -12,7 +12,7 @@ const ProductPage: React.FC = () => {
 
     useEffect(() =>{
         async function getProducts(){
-            const data  = await fetchData()
+            const data  = await fetchData('https://dummyjson.com/products')
             setProducts([...data.products])  
         }
         getProducts()

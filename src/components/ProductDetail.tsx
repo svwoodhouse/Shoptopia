@@ -3,6 +3,7 @@ import { Products, Reviews } from "../global/types"
 import { useParams } from "react-router-dom"
 import '../styles/ProductDetail.css';
 import { renderStars } from "../utils/renderStars";
+import { fetchData } from "../api/api";
 
 const ProductDetail = () => {
     const [product, setProduct] = useState<Products>({})
@@ -10,13 +11,12 @@ const ProductDetail = () => {
     const { productId } = useParams()
 
     useEffect(()=>{
-        async function getData(){
-            const response = await fetch(`https://dummyjson.com/products/${productId}`)
-            const data: Products = await response.json()
+        async function getProductDetails(){
+            const data = await fetchData(`https://dummyjson.com/products/${productId}`)
             setProduct(data)
             setReviews([...data.reviews])
         }
-        getData()
+        getProductDetails()
     }, [])
 
     return (
