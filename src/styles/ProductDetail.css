@@ -1,8 +1,12 @@
-.product-detail-container {
-    display: flex;
+.product-detail-page-container {
+    display: block;
     flex-direction: column;
     justify-content: center;
     align-content: center;
+}
+
+.product-detail-container {
+    display: flex;
 }
 
 .product-detail-image-container {
