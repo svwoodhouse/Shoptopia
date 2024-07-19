@@ -1,15 +1,14 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { Badge } from '@mui/material';
 import searchImage from '../assets/search_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png'
 import {ShoppingCartOutlined, StoreOutlined} from '@mui/icons-material';
-
 import '../styles/Header.css'
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 const Header = () => {
     const [searchInput, setSearchInput] = useState('');
-    const {cart} = useSelector((state: any) => state)
+    const { cart } = useSelector((state: any) => state)
     const navigate = useNavigate()
     
     return (
