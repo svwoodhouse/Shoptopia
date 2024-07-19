@@ -9,6 +9,7 @@ export interface Reviews {
 export interface Products {
     id: number,
     images: string[],
+    description: string,
     title: string,
     brand: string,
     category: string,
