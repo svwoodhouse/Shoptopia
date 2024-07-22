@@ -6,7 +6,7 @@ import { ActionType } from "../state/action-types";
 import '../styles/Checkout.css'
 
 const CheckOut = () => {
-    const { cart } = useSelector((state: any) => state)
+    const cart  = useSelector((state: any) => state.cart)
     const dispatch = useDispatch();
 
     const handleIncrease = (index: number) => {

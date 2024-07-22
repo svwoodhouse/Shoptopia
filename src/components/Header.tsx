@@ -8,7 +8,7 @@ import '../styles/Header.css'
 
 const Header = () => {
     const [searchInput, setSearchInput] = useState('');
-    const { cart } = useSelector((state: any) => state)
+    const cart = useSelector((state: any) => state.cart)
     const navigate = useNavigate()
     
     return (
