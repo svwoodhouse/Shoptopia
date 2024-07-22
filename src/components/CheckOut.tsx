@@ -6,7 +6,7 @@ import { ActionType } from "../state/action-types";
 import '../styles/Checkout.css'
 
 const CheckOut = () => {
-    const cart  = useSelector((state: any) => state.cart)
+    const cartState = useSelector((state: any) => state.cart)
     const dispatch = useDispatch();
 
     const handleIncrease = (index: number) => {
@@ -16,12 +16,11 @@ const CheckOut = () => {
     const handleDecrease = (index: number) => {
         dispatch({ type: ActionType.DECREASE_QUANTITY, payload: index})
     }
-    console.log(cart)
     return (
         <div className="checkout-container">
             <div className='checkout-items-container'>
                 {
-                    cart.cartItems.map((item: any, index: number)=>{
+                    cartState.cartItems.map((item: any, index: number)=>{
                         return(
                             <div className='checkout-container'>
                                 {item.image ? <img className="card-image" src={item.image} alt={item.name}></img>: 
@@ -40,7 +39,7 @@ const CheckOut = () => {
                 }                    
             </div>
             <div className='checkout-total-container'>
-                <div>Total: {cart.cartTotal}</div>
+                <div>Total: {cartState.cartTotal}</div>
                 <button>Buy</button>
             </div>
         </div>
