@@ -1,9 +1,9 @@
 import { Products } from "../global/types";
 import { useDispatch } from "react-redux";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
-
 import '../styles/ProductCard.css'
 import { ActionType } from "../state/action-types";
+import { renderStars } from "../utils/renderStars";
 
 interface ProductCardProps {
     props: Products,
@@ -16,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({props:{images, title, brand, p
     const handleClick = () => {
         onClick(id)
     }
-    
+
     const addToCart = () => {
         const data = {
             id: id,
@@ -37,7 +37,7 @@ const ProductCard: React.FC<ProductCardProps> = ({props:{images, title, brand, p
                 <div className="card-title">{title}</div>
                 <div className="card-brand">{brand}</div>
                 <div className="card-price">${price}</div>
-                <div className="card-rating">{rating} stars</div>
+                <div className="card-rating">{renderStars(rating)}</div>
                 <button className="card-add-to-cart-button" onClick={addToCart}>Add to Cart</button>
             </div>
         </div>

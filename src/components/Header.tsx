@@ -8,13 +8,14 @@ import '../styles/Header.css'
 
 const Header = () => {
     const [searchInput, setSearchInput] = useState('');
-    const cart = useSelector((state: any) => state.cart)
+    const cartState = useSelector((state: any) => state.cart)
     const navigate = useNavigate()
     
     return (
         <div className="header-container">
             <div className="header-right-section" onClick={()=> navigate('/')}>
                 <StoreOutlined className='company-logo'/>
+                <h2>Shoptopia</h2>
             </div>
             <div className='header-middle-section'>
                 <form className='search-bar-form'>
@@ -29,7 +30,7 @@ const Header = () => {
                 </form>
             </div>
             <div className='header-left-section' onClick={()=> navigate('/checkout')}>
-                <Badge color="secondary" badgeContent={cart.cartNumber}>
+                <Badge color="secondary" badgeContent={cartState.cartNumber}>
                     <ShoppingCartOutlined color="action" />
                 </Badge>
             </div>

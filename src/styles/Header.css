@@ -6,10 +6,11 @@
     justify-content: space-between;
     align-items: center;
     height: 60px;
+    color: white;
   }
 
   .header-right-section {
-    width: 100px;
+    width: 200px;
     height: 100%;
     display: flex;
     justify-content: center;

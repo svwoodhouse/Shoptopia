@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Products, Reviews } from "../global/types"
 import { useParams } from "react-router-dom"
 import '../styles/ProductDetail.css';
+import { renderStars } from "../utils/renderStars";
+import { fetchData } from "../api/api";
 
 const ProductDetail = () => {
     const [product, setProduct] = useState<Products>({})
@@ -9,38 +11,47 @@ const ProductDetail = () => {
     const { productId } = useParams()
 
     useEffect(()=>{
-        async function getData(){
-            const response = await fetch(`https://dummyjson.com/products/${productId}`)
-            const data: Products = await response.json()
+        async function getProductDetails(){
+            const data = await fetchData(`https://dummyjson.com/products/${productId}`)
             setProduct(data)
             setReviews([...data.reviews])
         }
-        getData()
+        getProductDetails()
     }, [])
 
     return (
-        <div className="product-detail-container">
+        <div className="product-detail-page-container">
             <div className="product-detail-image-container">
                 {product.images ? <img className="product-detail-image" src={product.images[0]} alt={product.title}></img> : <div>Loading image..</div>}
                 <div>
-                    <div>{product.title}</div>
-                    <div>{product.brand}</div>
+                        <h2>{product.title}</h2>
+                        <p>By: {product.brand}</p>
+                        <p>${product.price}</p>
                 </div>
             </div>
-            <div className="reviews-container">
+            <div className="product-detail-container">
+                <div className="product-details">
+                    <p>{product.description}</p>
+                    <p>{product.category}</p>
+                    <p>{product.warrantyInformation}</p>
+                    <p>{product.shippingInformation}</p>
+                    <p>{product.returnPolicy}</p>
+                </div>
+                <div className="reviews-container">
                 {
                     reviews.map((review, index)=>{
                         return(
                             <div className="rating-container" key={index}>
-                                <div>{review.rating} stars</div>
                                 <div>{review.reviewerName}</div>
                                 <div>{review.reviewerEmail}</div>
-                                <div>Reviewed on {review.date}</div>
+                                <div>{renderStars(review.rating)}</div>
                                 <div>{review.comment}</div>
+                                <div>Reviewed on {review.date}</div>
                             </div>
                         )
                     })
                 }
+            </div>
             </div>
         </div>
     )
