@@ -35,18 +35,3 @@
 .card-rating {
     margin-bottom: 5px;
 }
-
-.card-add-to-cart-button {
-    margin-bottom: 10px;
-    font-size: 15px;
-    background-color: rgb(86, 110, 147);
-    color: white;
-    border-radius: 15px;
-    border: 1px solid silver;
-    width: 200px;
-    height: 30px;
-}
-
-.card-add-to-cart-button:hover {
-    cursor: pointer;
-}

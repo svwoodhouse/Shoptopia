@@ -8,7 +8,6 @@ const ProductPage: React.FC = () => {
     const navigate = useNavigate();
 
     const [products, setProducts] = useState<Products[]>([])
-    const [pageNumber, setPageNumber] = useState(0);
 
     useEffect(() =>{
         async function getProducts(){

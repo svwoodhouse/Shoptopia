@@ -4,11 +4,14 @@ import { useParams } from "react-router-dom"
 import '../styles/ProductDetail.css';
 import { renderStars } from "../utils/renderStars";
 import { fetchData } from "../api/api";
+import { useDispatch } from "react-redux";
+import { ActionType } from "../state/action-types";
 
 const ProductDetail = () => {
     const [product, setProduct] = useState<Products>({})
     const [reviews, setReviews] = useState<Reviews[]>([])
     const { productId } = useParams()
+    const dispatch = useDispatch();
 
     useEffect(()=>{
         async function getProductDetails(){
@@ -19,6 +22,17 @@ const ProductDetail = () => {
         getProductDetails()
     }, [])
 
+    const addToCart = () => {
+        const data = {
+            id: product.id,
+            quantity: 1,
+            name: product.title,
+            image: product.images,
+            price: product.price
+        }
+        dispatch({type: ActionType.ADD_TO_CART, payload: data})
+    }
+
     return (
         <div className="product-detail-page-container">
             <div className="product-detail-image-container">
@@ -28,6 +42,7 @@ const ProductDetail = () => {
                         <p>By: {product.brand}</p>
                         <p>${product.price}</p>
                 </div>
+                <button className="add-to-cart-button" onClick={addToCart}>Add to Cart</button>
             </div>
             <div className="product-detail-container">
                 <div className="product-details">

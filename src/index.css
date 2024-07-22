@@ -23,9 +23,25 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #fff;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.add-to-cart-button {
+  margin-bottom: 10px;
+  font-size: 15px;
+  background-color: rgb(86, 110, 147);
+  color: white;
+  border-radius: 15px;
+  border: 1px solid silver;
+  width: 200px;
+  height: 30px;
+}
+
+.add-to-cart-button:hover {
+  cursor: pointer;
 }
