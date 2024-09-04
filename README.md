@@ -8,5 +8,12 @@ npm run dev
 navigate to http://localhost:5173/
 ```
 
-### API
+## How to run via Docker
+```
+Make sure you have Docker running locally first.
+docker-compose up
+navigate to http://localhost:5173
+```
+
+## API
 Uses the https://dummyjson.com/docs/products API for data
